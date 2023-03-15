@@ -1,0 +1,51 @@
+import multiprocessing
+
+class mProcessing:
+    
+    def __init__(self,param,print_square, print_cube ,arguments):
+        self.param = param                                              # Param is the number of processes we want to run parallely
+        self.print_square = print_square
+        self.print_cube = print_cube
+        self.arguments = arguments
+
+    def run(self):
+        set_size = len(self.arguments)//self.param
+        processes = []
+        list_set = []
+
+        # Creating subsets of arguments of param size
+        for i in range(0, len(self.arguments),set_size):
+            list_set.append(self.arguments[i : i + set_size])
+
+        # Executing the subsets simultaneously
+        for i in list_set:
+            square_process = multiprocessing.Process(target=self.print_square, args=(i,))
+            cube_process = multiprocessing.Process(target=self.print_cube, args=(i,))
+            processes.append(square_process)
+            processes.append(cube_process)
+
+        for process in processes:
+            process.start()
+        
+        for process in processes:
+            process.join()
+
+        # return processes
+
+
+
+def print_square(num):
+    for i in num:
+        print(f"Square of {i} is {i**2}")
+
+def print_cube(num):
+    for i in num:
+        print(f"Cube of {i} is {i**3}")
+
+
+
+if __name__ == "__main__":
+    list = [2,3,4,9]
+    param = 3
+    mp = mProcessing(param, print_square, print_cube, list)
+    mp.run()

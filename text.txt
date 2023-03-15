@@ -1,0 +1,2 @@
+create a class in python by the name of multiprocessing with takes parameter, functions of square and cube, list of argument to pass into the square and cube function.
+The multiprocessing class have the run function and by calling that function the cube and square function runs simultaneously as a threads.
