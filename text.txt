@@ -1,2 +1,43 @@
 create a class in python by the name of multiprocessing with takes parameter, functions of square and cube, list of argument to pass into the square and cube function.
 The multiprocessing class have the run function and by calling that function the cube and square function runs simultaneously as a threads.
+
+
+
+aws lambda
+partial function
+decorator
+
+
+
+SELECT DISTINCT m.id as manager, a.id as agent from manager m join supervisor s on m.super_id = s.id join Agent a on s.agent_id = a.id where m.id = 1
+
+
+
+CREATE TABLE manager (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  super_id INT
+);
+
+CREATE TABLE supervisor (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  agent_id INT
+);
+
+CREATE TABLE agent (
+  id INT PRIMARY KEY,
+  name VARCHAR(50)
+);
+
+
+INSERT INTO manager (id, name, super_id)
+VALUES (1, 'Abhishek', 1), (2, 'Aman', 2), (3, 'Bhupender', 3);
+
+INSERT INTO supervisor (id, name, agent_id)
+VALUES (1, 'Supervisor1', 1), (2, 'Supervisor2', 2), (3, 'Supervisor3', 3);
+
+INSERT INTO agent (id, name)
+VALUES (1, 'Agent1'), (2, 'Agent2'), (3, 'Agent3');
+
+
