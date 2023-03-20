@@ -1,0 +1,6 @@
+we have three tables i.e., shops, items and stocks
+columns in shops are shop_id, shop_name and shop_description
+columns in items are item_id, item_name and item_description
+columns in stocks are id, shop_id forign key from shops table,item_id forign key from items table, unit_count which is stock of item and unit_price which is price of item.
+
+Now we want to print all the shops with items in them, price of those items and count of those items.
