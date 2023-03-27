@@ -1,0 +1,18 @@
+Problem Statement:
+
+Develop a RESTful API using Flask that can manage a list of books. The API should support CRUD 
+(Create, Read, Update, Delete) operations on the books in the list.
+The API should allow users to add new books to the list, 
+retrieve information about existing books,
+update information about existing books,
+and delete books from the list. Each book should have a unique identifier,
+a title, an author, and a publication date.
+The API should be designed in a modular and scalable way,
+so that new features can be easily added in the future.
+The API should also be secure and protected against unauthorized access or modifications.
+To accomplish this, you will need to use Flask and SQLAlchemy to create a web application and a database.
+You will need to define the endpoints for the API,
+and implement the necessary functions for each endpoint to perform the desired CRUD operations on the database.
+
+Finally, you should test the API using a tool like Postman or cURL to ensure that it is 
+functioning correctly and handling all possible edge cases.
