@@ -1,0 +1,35 @@
+data= [
+        {
+            "hasError": False,
+            "value": {
+                "ExampleId": 1234,
+                "UtteranceText": "book me a flight from cairo to redmond next thursday"
+            }
+        },
+        {
+            "hasError": False,
+            "value": {
+                "ExampleId": 1237,
+                "UtteranceText": "what's the weather like in seattle?"
+            }
+        },
+        {
+            "hasError": True,
+            "value": {
+                "ExampleId": 1235,
+                "UtteranceText": "what's the weather like in seattle?"
+            }
+        }
+    ]
+
+def filterList(data):
+    new_list = []
+    for i in range (0, len(data)):
+        if str(data[i]["hasError"]).lower() == "false":
+            new_list.append({"value":data[i]["value"]})
+
+    return new_list
+
+import json
+data = filterList(data)
+print(json.dumps(data,indent=2))
